@@ -18,12 +18,14 @@ from flask_bootstrap import Bootstrap
 from markupsafe import Markup
 from smars_library.smars_library import SmarsRobot
 from utils.command_history import CommandHistory
+ # from Adafruit-PCA9685 import PCA9685
 
 APP = Flask(__name__)
 robot = SmarsRobot()
 
 # Comment out the line below to run on without the driver loading
 # DRIVER = sl.DO_NOT_USE_PCA_DRIVER
+DRIVER = None  # Set to None to suppress driver warnings
 
 # print(DRIVER)
 COMMAND_HISTORY = CommandHistory()
